@@ -1,12 +1,2 @@
-version: 0.2
 
-phases:
-  install:
-    runtime-versions:
-      java: openjdk-11-jdk
-  build:
-    commands:
-      - echo Building the Spring Pet Clinic project...
-      - mvn clean install
-      - mvn package
   
