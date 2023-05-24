@@ -4,17 +4,9 @@ phases:
   install:
     runtime-versions:
       java: openjdk-11-jdk
-  pre_build:
-    commands:
-      - echo Logging in to Amazon ECR...
-      - $(aws ecr get-login --no-include-email --region ap-south-1)
   build:
     commands:
       - echo Building the Spring Pet Clinic project...
       - mvn clean install
-  post_build:
-    commands:
-      - echo Build completed on `date`
-      - echo Pushing the Docker image to Amazon ECR...
-      - docker build -t public.ecr.aws/y6s3n1h9/springpetclinic/repo .
-      - docker push public.ecr.aws/y6s3n1h9/springpetclinic/repo
+      - mvn package
+  
