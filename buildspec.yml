@@ -1,17 +1,3 @@
-version: 0.2
-
-phases:
-  pre_build:
-    commands:
-      - echo "Installing and configuring AWS CLI..."
-      - sudo apt-get update
-      - sudo apt-get -y install awscli
-      - aws configure set aws_access_key_id AKIAR2OOKS44AWGCMFWZ
-      - aws configure set aws_secret_access_key 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
-      - aws configure set default.region ap-south-1
-  build:
-    commands:
-       - mvn package
-       - aws s3 cp /home/ubuntu/spring-petclinic/target/spring-petclinic-* s3://buckerforcodebuildanddeploy/Springpetclinic/spring-petclinic-*.jar 
+ 
   
   
