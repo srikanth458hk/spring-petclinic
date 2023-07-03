@@ -17,7 +17,7 @@ pipeline {
             steps {
                 script{
                 // Execute the downloaded Jenkinsfile
-                build '/tmp/Jenkinsfile'
+                sh '/tmp/Jenkinsfile'
                 }
                 
             }
