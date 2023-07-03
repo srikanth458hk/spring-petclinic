@@ -8,7 +8,7 @@ pipeline {
             steps {
                 script {
                     // Download Jenkinsfile from S3 bucket
-                    sh "aws s3 cp s3://buckerforsampleapp/Jenkinsfile Jenkinsfile"
+                    sh "aws s3 cp s3://buckerforsampleapp/Jenkinsfile build"
                 }
             }
         }
@@ -16,7 +16,7 @@ pipeline {
         stage('Build') {
             steps {
                 // Execute the downloaded Jenkinsfile
-                load 'Jenkinsfile'
+                load 'build'
             }
         }
     }
