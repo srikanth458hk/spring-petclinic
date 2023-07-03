@@ -1,7 +1,5 @@
 pipeline {
     agent any
-
-    }
     stages {
         stage('vcs') {
             steps {
@@ -14,5 +12,5 @@ pipeline {
             }
         }
 
-    }
-}    
+    }   
+}
