@@ -8,7 +8,7 @@ pipeline {
             steps {
                 script {
                     // Download Jenkinsfile from S3 bucket
-                    sh "s3://buckerforsampleapp/Jenkinsfile"
+                    sh 's3://buckerforsampleapp'
                 }
             }
         }
