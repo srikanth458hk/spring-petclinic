@@ -17,7 +17,8 @@ pipeline {
             steps {
                 script{
                 // Execute the downloaded Jenkinsfile
-                sh 'sudo /tmp/Jenkinsfile'
+                def jenkinsfile = readFile('/tmp/Jenkinsfile')
+                    evaluate(jenkinsfile)
                 }
                 
             }
