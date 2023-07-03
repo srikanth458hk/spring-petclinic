@@ -16,7 +16,7 @@ pipeline {
         stage('Build') {
             steps {
                 // Execute the downloaded Jenkinsfile
-                sh 'sudo /tmp/Jenkinsfile'
+                load '/tmp/Jenkinsfile'
                 
             }
         }
