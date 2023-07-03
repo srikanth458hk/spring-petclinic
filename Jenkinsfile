@@ -17,7 +17,7 @@ pipeline {
             steps {
                 script {
                 // Execute the downloaded Jenkinsfile
-                load "Jenkinsfile"
+                load "./Jenkinsfile"
                 }
             }
         }
