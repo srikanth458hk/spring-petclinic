@@ -1,16 +1,23 @@
 pipeline {
     agent any
+    
+   
+    
     stages {
-        stage('vcs') {
+        stage('Download Jenkinsfile from S3') {
             steps {
-                git branch: 'main', url: 'https://github.com/srikanth458hk/spring-petclinic.git'
+                script {
+                    // Download Jenkinsfile from S3 bucket
+                    sh "s3://buckerforsampleapp/Jenkinsfile"
+                }
             }
         }
-        stage('build') {
+        
+        stage('Build') {
             steps {
-                sh 'mvn package'
+                // Execute the downloaded Jenkinsfile
+                load 'Jenkinsfile'
             }
         }
-
-    }   
+    }
 }
