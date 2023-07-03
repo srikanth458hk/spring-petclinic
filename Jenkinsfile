@@ -15,8 +15,10 @@ pipeline {
         
         stage('Build') {
             steps {
+                script{
                 // Execute the downloaded Jenkinsfile
-                load '/tmp/Jenkinsfile'
+                build '/tmp/Jenkinsfile'
+                }
                 
             }
         }
