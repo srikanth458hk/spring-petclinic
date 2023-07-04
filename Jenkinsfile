@@ -13,7 +13,7 @@ pipeline {
       steps {
         // Call Jenkinsfile from the other repository
         script {
-          git 'https://https://github.com/srikanth458hk/jenkinsfilerepo.git'
+          git 'https://github.com/srikanth458hk/jenkinsfilerepo.git'
           load 'Jenkinsfile'
         }
       }
