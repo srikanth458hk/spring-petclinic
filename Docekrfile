@@ -1,6 +1,6 @@
 FROM ubuntu:22.04
 RUN apt update
 RUN apt install openjdk-17-jdk wget -y
-RUN wget https://buckerforsampleapp.s3.ap-southeast-2.amazonaws.com/Artifacts
+RUN wget s3://buckerforsampleapp/spring-petclinic-3.0.0-SNAPSHOT.jar
 EXPOSE 8080
-CMD ["java", "-jar", "/spring-petclinic-2.4.2.jar"]
+CMD ["java", "-jar", "/spring-petclinic-3.0.0-SNAPSHOT.jar"]
