@@ -3,6 +3,8 @@ RUN apt update
 RUN apt install openjdk-17-jdk wget -y
 RUN apt-get update && \
     apt-get install -y awscli
-RUN wget s3://buckerforsampleapp/spring-petclinic-3.0.0-SNAPSHOT.jar
+WORKDIR /app
+RUN aws s3 cp s3://buckerforsampleapp/spring-petclinic-3.0.0-SNAPSHOT.jar /app --recursive
+COPY --from=build /app /app
 EXPOSE 8080
 CMD ["java", "-jar", "/spring-petclinic-3.0.0-SNAPSHOT.jar"]
